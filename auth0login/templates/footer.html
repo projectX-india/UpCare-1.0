@@ -1,0 +1,91 @@
+<footer class="ftco-footer ftco-bg-dark ftco-section">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-md">
+          <div class="ftco-footer-widget mb-5">
+            <h2 class="ftco-heading-2 logo">Up.<span>care</span></h2>
+            <p>Take care of your body.Its the only place where you have to live.</p>
+          </div>
+          <div class="ftco-footer-widget mb-5">
+              <h2 class="ftco-heading-2">Have a Questions?</h2>
+              <div class="block-23 mb-3">
+                <ul>
+                  <li><a href="#"><span class="icon icon-phone"></span><span class="text">+34192342</span></a></li>
+                  <li><a href="#"><span class="icon icon-envelope"></span><span class="text">health@email.com</span></a></li>
+                </ul>
+              </div>
+
+              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
+              <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+              <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+              <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md">
+          <div class="ftco-footer-widget mb-5 ml-md-4">
+            <h2 class="ftco-heading-2">Links</h2>
+            <ul class="list-unstyled">
+              <li><a href="{% url 'dashboard' %}"><span class="ion-ios-arrow-round-forward mr-2"></span>News and Updates</a></li>
+              <li><a href="{% url 'fitness' %}"><span class="ion-ios-arrow-round-forward mr-2"></span>Fitness</a></li>
+              <li><a href="{% url 'diet' %}"><span class="ion-ios-arrow-round-forward mr-2"></span>Diet and Nutrition</a></li>
+              <li><a href="{% url 'departments' %}"><span class="ion-ios-arrow-round-forward mr-2"></span>Deparments</a></li>
+              <li><a href="{% url 'corona_updates' %}"><span class="ion-ios-arrow-round-forward mr-2"></span>Corona Updates</a></li>
+              <li><a href="{% url 'eyeeartest' %}"><span class="ion-ios-arrow-round-forward mr-2"></span>Online checkups</a></li>
+              <li><a href="{% url 'hospital_medecine' %}"><span class="ion-ios-arrow-round-forward mr-2"></span>Hospitals and Medecines</a></li>
+            </ul>
+          </div>
+          <div class="ftco-footer-widget mb-5 ml-md-4">
+            <h2 class="ftco-heading-2">Departments</h2>
+            <ul class="list-unstyled">
+              <li><a href="{% url 'departments' %}"><span class="ion-ios-arrow-round-forward mr-2"></span>Neurolgy</a></li>
+              <li><a href="{% url 'departments' %}"><span class="ion-ios-arrow-round-forward mr-2"></span>Dentist</a></li>
+              <li><a href="{% url 'departments' %}"><span class="ion-ios-arrow-round-forward mr-2"></span>Ophthalmology</a></li>
+              <li><a href="{% url 'departments' %}"><span class="ion-ios-arrow-round-forward mr-2"></span>Cardiology</a></li>
+              <li><a href="{% url 'departments' %}"><span class="ion-ios-arrow-round-forward mr-2"></span>Surgery</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md">
+            <div class="ftco-footer-widget mb-5">
+              <h2 class="ftco-heading-2">Recent Blog</h2>
+              {% for i in Blogs %}
+              <div class="block-21 mb-4 d-flex">
+                <a class="blog-img mr-4" style="background-image: url({{ i.image.url }});"></a>
+                <div class="text">
+                  <h3 class="heading"><a href="{% url 'details' i.id %}">{{ i.title }}</a></h3>
+                  <div class="meta">
+                    <div><a href="#"><span class="icon-calendar"></span>{{ i.date|date:'M d Y'|upper }}</a></div>
+                    <div><a href="#"><span class="icon-person"></span>{{i.user}}</a></div>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        <div class="col-md">
+            <div class="ftco-footer-widget mb-5">
+              <h2 class="ftco-heading-2">Opening Hours</h2>
+              <h3 class="open-hours pl-4"><span class="ion-ios-time mr-3"></span>We are open 24/7</h3>
+          </div>
+          <div class="ftco-footer-widget mb-5">
+              <h2 class="ftco-heading-2">Subscribe Us!</h2>
+            <form action="#" class="subscribe-form">
+              <div class="form-group">
+                <input type="text" class="form-control mb-2 text-center" placeholder="Enter email address">
+                <input type="submit" value="Subscribe" class="form-control submit px-3">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 text-center">
+
+          <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+        </div>
+      </div>
+    </div>
+  </footer>

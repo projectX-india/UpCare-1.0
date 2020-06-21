@@ -1,0 +1,59 @@
+{% load static %}
+	<nav class="navbar py-4 navbar-expand-lg ftco_navbar navbar-light bg-light flex-row">
+    	<div class="container">
+    		<div class="row no-gutters d-flex align-items-start align-items-center px-3 px-md-0">
+    			<div class="col-lg-3 pr-4 align-items-center">
+					<!-- Dr.<span>care</span> -->
+		    		<a class="navbar-brand" href="{% url 'dashboard' %}"><img style="margin-right: 20px;" src="{% static 'images/logo.jpg' %}" width="100" height="70">Up.<span style="margin-right: 50px;">care</span></a>
+				</div>
+	    		<div class="col-lg-9 d-none d-md-block">
+		    		<div class="row d-flex">
+			    		
+					    <div class="col-md pr-4 d-flex topper align-items-center">
+					    	<div class="icon bg-white mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
+						    <span class="text">Email: health@email.com</span>
+					    </div>
+					    <div class="col-md pr-4 d-flex topper align-items-center">
+					    	<div class="icon bg-white mr-2 d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
+						    <span class="text">Helpline: 34192342</span>
+					    </div>
+					    
+					    <div class="col-md pr-4 d-flex topper align-items-center">
+					    	
+					    </div>
+					    <div class="col-md pr-4 d-flex topper align-items-center">
+					    	
+                        </div>
+                        {% if user.is_authenticated %}
+                        <div class="pr-4 d-flex align-items-center">
+					    	<span> Welcome {{ user.username }}</span>
+						    
+					    </div>
+					     <div class="pr-4 d-flex align-items-center">
+					     	<a href="/logout" class="btn btn-primary btn-lg btn-login">Log Out</a>
+					    	
+					    </div>
+                        {% else %}
+                        <div class="col-md pr-4 d-flex topper align-items-center">
+					    	
+                        </div>
+                        <div class="col-md pr-4 d-flex topper align-items-center">
+					    	
+                        </div>
+                        <div class="col-md pr-4 d-flex topper align-items-center">
+					    	
+                        </div>
+                        <div class="pr-4 d-flex align-items-center">
+						    
+					    </div>
+					     <div class="pr-4 d-flex align-items-center">
+					     	<a href="/login/auth0" class="btn btn-primary btn-lg btn-login">Login</a>
+					    	
+					    </div>
+                        {% endif %}
+					     
+				    </div>
+			    </div>
+		    </div>
+		  </div>
+    </nav>
