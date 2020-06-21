@@ -1,0 +1,422 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Dr.care - Free Bootstrap 4 Template by Colorlib</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.timepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'css/chat.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	
+	<script type="text/javascript">
+		function getCookie(name) {
+			var cookieValue = null;
+			if (document.cookie && document.cookie !== '') {
+				var cookies = document.cookie.split(';');
+				for (var i = 0; i < cookies.length; i++) {
+					var cookie = cookies[i].trim();
+					// Does this cookie string begin with the name we want?
+					if (cookie.substring(0, name.length + 1) === (name + '=')) {
+						cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+						break;
+					}
+				}
+			}
+			return cookieValue;
+		}
+		var csrftoken = getCookie('csrftoken');
+	</script>
+
+  </head>
+  <body>
+    {% include 'base.html' %}
+	  <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container d-flex align-items-center">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+	      <p class="button-custom order-lg-last mb-0"><a href="{% url 'all_blog' %}" class="btn btn-secondary py-2 px-3">Check our Blog</a></p>
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav mr-auto">
+	        	<li class="nav-item active"><a href="{% url 'dashboard' %}" class="nav-link pl-0">News & Updates</a></li>
+	        	<li class="nav-item"><a href="{% url 'fitness' %}" class="nav-link">Fitness</a></li>
+	        	<li class="nav-item"><a href="{% url 'diet' %}" class="nav-link">Diet & nutrition</a></li>
+	        	<li class="nav-item"><a href="{% url 'departments' %}" class="nav-link">Departments</a></li>
+	        	<li class="nav-item"><a href="{% url 'corona_updates' %}" class="nav-link">Corona updates</a></li>
+	        	<li class="nav-item"><a href="{% url 'eyeeartest' %}" class="nav-link">checkup</a></li>
+	          <li class="nav-item"><a href="{% url 'hospital_medecine' %}" class="nav-link">Hospitals & medicine</a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+    <!-- END nav -->
+    
+    <section class="home-slider owl-carousel">
+      <div class="slider-item" style="background-image:url({% static 'images/bg-1.jpg' %});" data-stellar-background-ratio="0.5">
+      	<div class="overlay"></div>
+        <div class="container">
+          <div class="row no-gutters slider-text align-items-center justify-content-start" data-scrollax-parent="true">
+          <div class="col-md-6 text ftco-animate">
+            <h1 class="mb-4">Can COVID-19 trigger diabetes?</span></h1>
+            <h4 class="subheading">An international group of diabetes experts believes that some people may develop diabetes for the first time due to severe COVID-19, the respiratory illness caused by the SARS-CoV-2 virus. They have set up a registry to investigate the possible link and inform future treatment.</h4>
+          </div>
+        </div>
+        </div>
+      </div>
+       <div class="slider-item" style="background-image:url({% static 'images/bg-2.jpg' %});" data-stellar-background-ratio="0.5">
+      	<div class="overlay"></div>
+        <div class="container">
+          <div class="row no-gutters slider-text align-items-center justify-content-start" data-scrollax-parent="true">
+          <div class="col-md-6 text ftco-animate">
+            <h1 class="mb-4">Brain 'atlas' maps mouse synapses over time</span></h1>
+            <h4 class="subheading">Scientists have created an “atlas” of synapses in the mouse brain, potentially helping other researchers better understand neurological disorders in humans.</h4>
+          </div>
+        </div>
+        </div>
+      </div>
+       <div class="slider-item" style="background-image:url({% static 'images/bg-3.jpg' %});" data-stellar-background-ratio="0.5">
+      	<div class="overlay"></div>
+        <div class="container">
+          <div class="row no-gutters slider-text align-items-center justify-content-start" data-scrollax-parent="true">
+          <div class="col-md-6 text ftco-animate">
+            <h1 class="mb-4">COVID-19 live updates</span></h1>
+            <h4 class="subheading">Total number of cases passes 8.3 million</h4>
+          </div>
+        </div>
+        </div>
+      </div>
+      <div class="slider-item" style="background-image:url({% static 'images/bg-4.jpg' %});">
+      	<div class="overlay"></div>
+        <div class="container">
+          <div class="row no-gutters slider-text align-items-center justify-content-start" data-scrollax-parent="true">
+          <div class="col-md-6 text ftco-animate">
+            <h1 class="mb-4">New COVID-19 antibody test may reflect virus immunity more accurately</span></h1>
+            <h4 class="subheading">A new type of antibody test may reveal whether someone has developed strong immunity to the virus that causes COVID-19. The test may also be much less likely to give false-positive results.</h4>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+		
+		<section class="ftco-intro" style="background-image: url({% static 'images/bg_3.jpg' %});" data-stellar-background-ratio="0.5">
+			<div class="overlay"></div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-9">
+						<h2>We Provide Free Health Caring Tips</h2>
+						<p class="mb-0">Your Health is Our Top Priority with Comprehensive, Affordable medical.</p>
+						<p></p>
+					</div>
+					<div class="col-md-3 d-flex align-items-center">
+						<p class="mb-0"><a href="#" class="btn btn-secondary px-4 py-3">Check our Blog</a></p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		<section class="ftco-section bg-light">
+			<div class="container">
+				<div class="row justify-content-center mb-5 pb-2">
+          <div class="col-md-8 text-center heading-section ftco-animate">
+          	<span class="subheading">News</span>
+            <h2 class="mb-4">Recent Health News</h2>
+            <p>Separated they live in. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country</p>
+          </div>
+        </div>
+				<div class="row">
+		{% for i in news %}
+          <div class="col-md-4 ftco-animate">
+            <div class="blog-entry">
+              <a href="blog-single.html" class="block-20" style="background-image: url({{i.image.url}});">
+								<div class="meta-date text-center p-2">
+                  <span class="day">Latest</span>
+                </div>
+              </a>
+              <div class="text bg-white p-4">
+                <h3 class="heading"><a href="{% url 'news_single' i.id %}">{{ i.title }}</a></h3>
+                <p>{{ i.description|truncatechars:70 }}</p>
+                <div class="d-flex align-items-center mt-4">
+	                
+                </div>
+              </div>
+            </div>
+		  </div>
+		  {% endfor %}
+        </div>
+			</div>
+		</section>
+		<section class="ftco-section testimony-section bg-light">
+      <div class="container">
+        <div class="row justify-content-center mb-5 pb-2">
+          <div class="col-md-8 text-center heading-section ftco-animate">
+          	<span class="subheading">Trending</span>
+            <h2 class="mb-4">We capture the web for you!</h2>
+            <p>Best Diraction towards Positiveness</p>
+          </div>
+        </div>
+        <div class="row ftco-animate justify-content-center">
+          <div class="col-md-8">
+            <div class="carousel-testimony owl-carousel">
+              <div class="item">
+                <div class="testimony-wrap d-flex">
+                  <div class="user-img mr-4" style="background-image: url({% static 'images/person_1.jpg' %})">
+                  </div>
+                  <div class="text ml-2 bg-light">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                    <p>Take care of your body. It's the obly place you have to live.</p>
+                    <p class="name">Jim Rohn</p>
+                    <span class="position">American entrepreneur</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap d-flex">
+                  <div class="user-img mr-4" style="background-image: url({% static 'images/person_2.jpg' %})">
+                  </div>
+                  <div class="text ml-2 bg-light">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                    <p>I hate every minute of traning. But I said, don't quit. Suffer now and live the rest of your life as a champion.</p>
+                    <p class="name">Muhammad Ali</p>
+                    <span class="position">Boxer</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap d-flex">
+                  <div class="user-img mr-4" style="background-image: url({% static 'images/person_3.jpg' %})">
+                  </div>
+                  <div class="text ml-2 bg-light">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                    <p>The groundwork of all hapiness is good health</p>
+                    <p class="name">L. Hunt</p>
+                    <span class="position">Businessperson</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap d-flex">
+                  <div class="user-img mr-4" style="background-image: url({% static 'images/person_4.jpg' %})">
+                  </div>
+                  <div class="text ml-2 bg-light">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                    <p>Dont't limit your Challenges. Challenge your limits</p>
+                    <p class="name">Jerry Dunn</p>
+                    <span class="position">Coach</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap d-flex">
+                  <div class="user-img mr-4" style="background-image: url({% static 'images/person_5.jpg' %})">
+                  </div>
+                  <div class="text ml-2 bg-light">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                    <p>If you ever lack the motivation to train then think what happens to your mind & body when you don't.</p>
+                    <p class="name">Shifu Yan Lei</p>
+                    <span class="position">Kung Fu Master</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+		<div class="fabs">
+
+			<div class="chat">
+		  
+			  <div class="chat_header">
+				<div class="chat_option">
+				<div class="header_img">
+				  <img src="http://res.cloudinary.com/dqvwa7vpe/image/upload/v1496415051/avatar_ma6vug.jpg"/>
+				  </div>
+				  <span id="chat_head">Jane Doe</span> <br> <span class="agent">Agent</span> <span class="online">(Online)</span>
+				 <span id="chat_fullscreen_loader" class="chat_fullscreen_loader"><i class="fullscreen zmdi zmdi-window-maximize"></i></span>
+				</div>
+			  </div>
+			  
+			  <div class="chat_body chat_login">
+				  <a id="chat_first_screen" class="fab"><i class="zmdi zmdi-arrow-right"></i></a>
+				  <p>We make it simple and seamless for businesses and people to talk to each other. Ask us anything</p>
+			  </div>
+			  
+			  <div id="chat_converse" class="chat_conversion chat_converse">
+		  
+				<span class="chat_msg_item chat_msg_item_admin">
+					  <div class="chat_avatar">
+						 <img src="http://res.cloudinary.com/dqvwa7vpe/image/upload/v1496415051/avatar_ma6vug.jpg"/>
+					  </div>Hey there! Any question?</span>
+<!-- 		  
+					  
+				<span class="chat_msg_item chat_msg_item_user">
+					  Hello!</span>
+					  <span class="status">20m ago</span> -->
+			  </div>
+			  
+			  <div id="chat_body" class="chat_body"></div>
+			  
+			  <!-- <div class="fab_field">
+				<a id="fab_send" class="fab"><i class="zmdi zmdi-mail-send"></i></a>
+				<textarea id="chatSend" name="chat_message" placeholder="Send a message" class="chat_field chat_message"></textarea>
+			  </div> -->
+			  <form class="fab_field">
+				  <button style="border: none;" type="submit" id="fab_send" class="fab"><i class="zmdi zmdi-mail-send"></i></button>
+				  <input type="text" id="chatSend" name="chat_message" placeholder="Send a message" class="chat_field chat_message">
+			  </form>
+			  <!-- <form class="msger-inputarea">
+				  <input type="text" class="msger-input" id="textInput" placeholder="Enter your message...">
+				  <button type="submit" class="msger-send-btn">Send</button>
+				</form> -->
+			</div>
+		  
+			  <a id="prime" class="fab"><i class="prime zmdi zmdi-comment-outline"></i></a>
+		  </div>
+		  {% include 'footer.html' %}
+
+		  
+  
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+<script src='http://code.jquery.com/jquery-1.11.3.min.js'></script>
+<script src="{% static 'js/chat.js' %}"></script>
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+  <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'js/aos.js' %}"></script>
+  <script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+  <script src="{% static 'js/jquery.timepicker.min.js' %}"></script>
+  <script src="{% static 'js/scrollax.min.js' %}"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="{% static 'js/google-map.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+
+  <script>
+		const msgerForm = get(".fab_field");
+		const msgerInput = get("#chatSend");
+		const msgerChat = get(".chat_converse");
+
+
+		// Icons made by Freepik from www.flaticon.com
+		const BOT_IMG = "https://image.flaticon.com/icons/svg/327/327779.svg";
+		const PERSON_IMG = "https://image.flaticon.com/icons/svg/145/145867.svg";
+		const BOT_NAME = "CoronaBot";
+		const PERSON_NAME = "You";
+
+		msgerForm.addEventListener("submit", event => {
+		event.preventDefault();
+
+		const msgText = msgerInput.value;
+		if (!msgText) return;
+
+		appendMessage(PERSON_NAME, PERSON_IMG, "user", msgText);
+		msgerInput.value = "";
+		botResponse(msgText);
+		});
+
+		function appendMessage(name, img, side, text) {
+		//   Simple solution for small apps
+			// if(side=="user")
+			// {
+				const msgHTML =`<span class="chat_msg_item chat_msg_item_${side}">
+				${text}</span>
+				<span class="status">${formatDate(new Date())}</span>`;
+			// }
+			// else if(side=="admin")
+			// {
+			// 	const msgHTML =`<span class="chat_msg_item chat_msg_item_${side}">
+			// 	<div class="chat_avatar">
+			// 	<img src="http://res.cloudinary.com/dqvwa7vpe/image/upload/v1496415051/avatar_ma6vug.jpg"/>
+			// 	</div>${text}</span>`
+			// }
+
+		msgerChat.insertAdjacentHTML("beforeend", msgHTML);
+		msgerChat.scrollTop += 500;
+		}
+
+		function appendMessage1(name, img, side, text) {
+				const msgHTML =`<span class="chat_msg_item chat_msg_item_${side}">
+				<div class="chat_avatar">
+				<img src="http://res.cloudinary.com/dqvwa7vpe/image/upload/v1496415051/avatar_ma6vug.jpg"/>
+				</div>${text}</span>`
+
+		msgerChat.insertAdjacentHTML("beforeend", msgHTML);
+		msgerChat.scrollTop += 500;
+		}
+
+		function botResponse(rawText) {
+			console.log(rawText);
+			url='/get_bot_response/'
+			fetch(url,{
+				method:'POST',
+				headers:{
+					'Content-Type':'application/json',
+					'X-CSRFToken':csrftoken,
+				},
+				body:JSON.stringify({'msg':rawText})
+			})
+				
+				.then((response)=>{
+					return response.json()
+				})
+
+				.then((data)=>{
+					console.log(data)
+					const msgText = data;
+					appendMessage1(BOT_NAME, BOT_IMG, "admin", msgText);
+				})
+		}
+
+		function get(selector, root = document) {
+		return root.querySelector(selector);
+		}
+
+		function formatDate(date) {
+		const h = "0" + date.getHours();
+		const m = "0" + date.getMinutes();
+
+		return `${h.slice(-2)}:${m.slice(-2)}`;
+		}
+	</script>
+    
+  </body>
+</html>
