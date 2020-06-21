@@ -1,0 +1,284 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Dr.care - Free Bootstrap 4 Template by Colorlib</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.timepicker.css' %}">
+
+    
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  </head>
+    <script>
+    function randomno(){
+
+      var x = Math.floor((Math.random()*4) +1);
+      return x;
+    }
+    
+    var score = 0;
+    
+    var count_check = 0;
+
+    function decision(event){
+
+      
+      
+      if (count_check == 9){
+      alert("cover your left eye!");
+      document.getElementById('test_image').height = 50;
+      document.getElementById('test_image').width = 50;
+      }
+
+      if (count_check == 18){
+        
+        result();
+      }
+      count_check = count_check +1;
+      eyetest(event);
+      
+      
+    }
+
+    function eyetest(event){
+      
+      var htmlcontent = '';
+			var rand  = randomno();
+			var imagename = rand + '.jpg';
+			var name = document.getElementById('test_image').src;
+			var height  = document.getElementById('test_image').height;
+			var width = document.getElementById('test_image').width;
+
+			console.log(name);
+			name2 = name.slice(0, name.length -5);
+			var left_name = name2 + "2.jpg";
+			var right_name = name2 + "1.jpg";
+			var top_name = name2 + "3.jpg";
+			var down_name = name2 + "4.jpg";
+			
+			console.log(left_name, right_name,top_name,down_name);
+			switch(event.target.value){
+				case 'left':{
+					if (name == left_name){
+						score = score +100;
+					}
+					break;
+				}
+				case 'right':{
+					if (name == right_name){
+						score = score +100;
+					}
+					break;
+				}
+				case 'up':{
+					if (name == top_name){
+						score = score +100;
+					}
+					break;
+				}
+				case 'down':{
+					if (name == down_name){
+						score = score +100;
+					}
+					break;
+				}
+
+			}
+
+      if (height<=5){
+
+        return;
+        
+      }else{
+        document.getElementById('test_image').height = height -5;
+        document.getElementById('test_image').width = width - 5;
+      }
+      console.log(imagename)
+      document.getElementById('test_image').src="../static/images/"+imagename;
+
+      
+    }
+
+    function result (){
+
+      if (score<1000){
+        document.getElementById('score').innerHTML = "You seem to have difficulties recognising small characters with your eyes.";
+      }else if (score<1500){
+        document.getElementById('score').innerHTML = "You might be at risk of having some eye problems";
+      }else{
+        document.getElementById('score').innerHTML = "Congratulations, your visual activity seems good in both eyes.";
+      }
+      
+    }
+    
+  </script>
+    <style type="text/css">
+    .table2 {
+      table-layout: fixed;
+      width: 150px;
+      height: 150px;
+      text-align: center;
+
+    }
+    th, td { 
+                width: 100px;
+                height: 100px;
+
+
+                background-color:none; 
+            } 
+  </style>
+
+  </head>
+  <body>
+    {% include 'base.html' %}
+	  <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container d-flex align-items-center">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+	      <p class="button-custom order-lg-last mb-0"><a href="{% url 'all_blog' %}" class="btn btn-secondary py-2 px-3">Check our Blog</a></p>
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav mr-auto">
+	        	<li class="nav-item active"><a href="{% url 'dashboard' %}" class="nav-link pl-0">News & Updates</a></li>
+	        	<li class="nav-item"><a href="{% url 'fitness' %}" class="nav-link">Fitness</a></li>
+	        	<li class="nav-item"><a href="{% url 'diet' %}" class="nav-link">Diet & nutrition</a></li>
+	        	<li class="nav-item"><a href="{% url 'departments' %}" class="nav-link">Departments</a></li>
+	        	<li class="nav-item"><a href="{% url 'corona_updates' %}" class="nav-link">Corona updates</a></li>
+	        	<li class="nav-item"><a href="{% url 'eyeeartest' %}" class="nav-link">checkup</a></li>
+	          <li class="nav-item"><a href="{% url 'hospital_medecine' %}" class="nav-link">Hospitals & medicine</a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+    <!-- END nav -->
+    
+    <section class="hero-wrap hero-wrap-2" style="background-image: url({% static 'images/ft-1.jpg' %});" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+          <div class="col-md-9 ftco-animate text-center">
+            <h1 class="mb-2 bread">Checkup</h1>
+            <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Eye Test<i class="ion-ios-arrow-forward"></i></a></span> <span></span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+		<section class="ftco-section">
+      <div class="container">
+    		<div class="row justify-content-center mb-5 pb-2">
+          <div class="col-md-8 text-center heading-section ftco-animate">
+            <h2 class="mb-4">Eye Test</h2>
+             </div>
+        </div>
+        </div>
+			<div class="container">
+				<div class="row">
+          <div class="col-lg-8 ftco-animate">
+            
+
+            <center>
+              <table class="table2">
+    <tr>
+      <td></td>
+      <td>
+        <input type="submit" name="direction" value="up" onclick="decision(event)">
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>
+  <input type="submit" name="direction" value="left" onclick="decision(event)"></td>
+  <td style="height: 60px; width: 60px;">
+    <center>
+  <img src="{% static 'images/1.jpg' %}" id="test_image" height="50" width="50"></td>
+</center>
+  <td>
+  <input type="submit" name="direction" value="right" onclick="decision(event)">
+</td>
+</tr>
+  <tr>
+    <td></td>
+    <td>
+  <input type="submit" name="direction" value="down" onclick="decision(event)"></td>
+  <td></td>
+</tr>
+
+</table>
+<br>
+<p id="score"></p>
+            </center>
+            
+            
+            
+
+          </div> <!-- .col-md-8 -->
+
+          <div class="col-lg-4 sidebar ftco-animate">
+            
+           
+
+            
+
+            
+            <div class="sidebar-box ftco-animate">
+              <h3><b>Instructions</b></h3>
+              <ul>
+                <li>please keep a distance of 40cm between screen and eyes</li>
+                <li>first cover your right eye with your hand and take test. cover your left eye when prompted</li>
+                <li>you have to click on the direction of the direction of <b>'E'</b></li>
+                <li> the result will appear on end of test </li>
+              </ul>
+            </div>
+          </div><!-- END COL -->
+        </div>
+			</div>
+		</section>
+
+    {% include 'footer.html' %}
+    
+  
+
+ <!-- loader -->
+ <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+ <script src='http://code.jquery.com/jquery-1.11.3.min.js'></script>
+ <script src="{% static 'js/chat.js' %}"></script>
+   <script src="{% static 'js/jquery.min.js' %}"></script>
+   <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+   <script src="{% static 'js/popper.min.js' %}"></script>
+   <script src="{% static 'js/bootstrap.min.js' %}"></script>
+   <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+   <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+   <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+   <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+   <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+   <script src="{% static 'js/aos.js' %}"></script>
+   <script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+   <script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+   <script src="{% static 'js/jquery.timepicker.min.js' %}"></script>
+   <script src="{% static 'js/scrollax.min.js' %}"></script>
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+   <script src="{% static 'js/google-map.js' %}"></script>
+   <script src="{% static 'js/main.js' %}"></script>
+   
+ </body>
+</html>
