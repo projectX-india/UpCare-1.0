@@ -1,4 +1,4 @@
-# UpCare
+# UpCare 1.0
 
 Tagline
 >> Let's care digitally
